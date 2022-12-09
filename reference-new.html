@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP 9.11.1 enthält eine neue Verbesserung.">
-  <meta name="keywords" content=" what"s new, new, features, release notes, enhancements"><!-- Icons -->
+  <meta name="keywords" content=" new features, release notes, enhancements"><!-- Icons -->
   <link rel="icon" href="/de-de/cloud-volumes-ontap-9111-relnotes/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/de-de/cloud-volumes-ontap-9111-relnotes/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -178,7 +178,7 @@
     <li>
       
       <a href="https://docs.netapp.com/de-de/cloud-volumes-ontap-relnotes/reference-new.html" target="_self">
-        <span translate="no" class="notranslate"><span>Cloud Volumes ONTAP</span><span class="version"> 9.12.0</span></span>
+        <span translate="no" class="notranslate"><span>Cloud Volumes ONTAP</span><span class="version"> 9.12.1</span></span>
       </a>
                      
     </li>
@@ -592,7 +592,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/de-de/cloud-manager-family/"><img src="/de-de/cloud-volumes-ontap-9111-relnotes/images/left_arrow.png" alt=""><pre>Alle Dokumentationen zum Cloud Manager</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/de-de/cloud-manager-family/"><img src="/de-de/cloud-volumes-ontap-9111-relnotes/images/left_arrow.png" alt=""><pre>Alle BlueXP-Dokumentationen</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -768,7 +768,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/de-de/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -804,7 +804,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 06:44:17 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 16:31:21 +0000">12/09/2022</time>
     
   
 
@@ -820,7 +820,18 @@
 <p>Cloud Volumes ONTAP 9.11.1 umfasst neue Verbesserungen.</p>
 </div>
 <div class="paragraph">
-<p>Zusätzliche Funktionen und Verbesserungen sind auch in den neuesten Versionen von Cloud Manager eingeführt. Siehe <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html" target="_blank" rel="noopener">"Versionshinweise Zu Cloud Manager"</a> Entsprechende Details.</p>
+<p>Zusätzliche Funktionen und Erweiterungen sind ebenfalls in den neuesten Versionen von BlueXP verfügbar. Siehe <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html" target="_blank" rel="noopener">"Versionshinweise zu BlueXP"</a> Entsprechende Details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="9-11-1-p3-19-oktober-2022">9.11.1 P3 (19. Oktober 2022)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der 9.11.1 P3-Patch ist jetzt für Cloud Volumes ONTAP für alle Cloud-Provider verfügbar, wenn Sie über einen Connector mit Version 3.9.22 oder höher verfügen. BlueXP fordert Sie auf, Ihre vorhandenen Systeme auf diese Patch-Version zu aktualisieren.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.11.1P3" target="_blank" rel="noopener">"Zeigen Sie die Liste der im P3-Patch fixierten Fehler an"</a> (Anmeldung auf der NetApp Support Site erforderlich).</p>
 </div>
 </div>
 </div>
@@ -911,7 +922,7 @@
 <p>Wenn Sie mit diesem Release eine neue Storage-VM auf einem Cloud Volumes ONTAP HA-Paar in AWS oder Azure erstellen, müssen Sie die Netzwerk-Service-Richtlinien für die Storage-VM ändern. Das Ändern der Services ist erforderlich, da Cloud Volumes ONTAP sicherstellen kann, dass die iSCSI-LIF für ausgehende Managementverbindungen verwendet werden kann.</p>
 </div>
 <div class="paragraph">
-<p>Beachten Sie, dass das Ändern von LIF-Services für Cloud Volumes ONTAP in Google Cloud nicht erforderlich ist, da die Cloud Manager API während der Erstellung die LIF-Services für Sie festlegt.</p>
+<p>Beachten Sie, dass das Ändern von LIF-Diensten für Cloud Volumes ONTAP in Google Cloud nicht erforderlich ist, da die BlueXP API die LIF-Dienste während der Erstellung für Sie festlegt.</p>
 </div>
 <div class="paragraph">
 <p>Die Befehle, die Sie ausführen müssen, werden auf den folgenden Seiten angegeben:</p>
@@ -946,22 +957,22 @@
 <div class="sect2">
 <h3 id="upgrade-tipps">Upgrade-Tipps</h3>
 <div class="paragraph">
-<p>Upgrades von Cloud Volumes ONTAP müssen von Cloud Manager abgeschlossen werden. Sie sollten kein Cloud Volumes ONTAP-Upgrade mit System Manager oder der CLI durchführen. Dies kann die Stabilität des Systems beeinträchtigen.</p>
+<p>Upgrades von Cloud Volumes ONTAP müssen von BlueXP abgeschlossen werden. Sie sollten kein Cloud Volumes ONTAP-Upgrade mit System Manager oder der CLI durchführen. Dies kann die Stabilität des Systems beeinträchtigen.</p>
 </div>
 <div class="paragraph">
-<p><a href="http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" target="_blank" rel="noopener">"Informieren Sie sich, wie ein Upgrade durchgeführt wird, wenn Cloud Manager Sie benachrichtigt"</a>.</p>
+<p><a href="http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" target="_blank" rel="noopener">"Erfahren Sie, wie Sie aktualisiert werden können, wenn Sie von BlueXP benachrichtigt werden"</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="unterstützter-upgrade-pfad">Unterstützter Upgrade-Pfad</h3>
 <div class="paragraph">
-<p>Sie können ein Upgrade von Version 9.11.0 und Version 9.10.1 auf Cloud Volumes ONTAP 9.11.1 durchführen. Cloud Manager fordert Sie auf, qualifizierte Cloud Volumes ONTAP Systeme auf diese Version zu aktualisieren.</p>
+<p>Sie können ein Upgrade von Version 9.11.0 und Version 9.10.1 auf Cloud Volumes ONTAP 9.11.1 durchführen. Unter BlueXP werden Sie aufgefordert, qualifizierte Cloud Volumes ONTAP-Systeme auf diese Version zu aktualisieren.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="erforderliche-version-des-connectors">Erforderliche Version des Connectors</h3>
 <div class="paragraph">
-<p>Der Cloud Manager Connector muss Version 3.9.19 oder höher ausführen, um neue Cloud Volumes ONTAP 9.11.1-Systeme bereitzustellen und bestehende Systeme auf 9.11.1 zu aktualisieren.</p>
+<p>Der BlueXP-Connector muss Version 3.9.19 oder höher ausführen, um neue Cloud Volumes ONTAP 9.11.1-Systeme bereitzustellen und bestehende Systeme auf 9.11.1 zu aktualisieren.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
