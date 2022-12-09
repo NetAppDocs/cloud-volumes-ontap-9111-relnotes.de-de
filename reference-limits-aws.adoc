@@ -22,7 +22,7 @@ Cloud Volumes ONTAP verfügt über Einschränkungen bei der Storage-Konfiguratio
 
 Die maximale Systemkapazität eines Cloud Volumes ONTAP-Systems wird durch seine Lizenz bestimmt. Die maximale Systemkapazität umfasst festplattenbasierten Storage sowie Objekt-Storage für Daten-Tiering.
 
-NetApp unterstützt nicht das Überschreiten der Kapazitätsgrenze des Systems. Wenn Sie die lizenzierte Kapazitätsgrenze erreichen, zeigt Cloud Manager eine Aktion erforderliche Meldung an, sodass Sie keine weiteren Festplatten hinzufügen können.
+NetApp unterstützt nicht das Überschreiten der Kapazitätsgrenze des Systems. Wenn Sie die lizenzierte Kapazitätsgrenze erreichen, zeigt BlueXP eine Meldung mit der erforderlichen Aktion an, sodass Sie keine weiteren Festplatten hinzufügen können.
 
 Bei einigen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie durch die Verwendung von Festplatten allein das Kapazitätslimit nicht erreichen. In solchen Fällen wird die Kapazitätsgrenze von erreicht https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering inaktiver Daten in Objektspeicher"^]. Weitere Details finden Sie unter Kapazitäts- und Festplattengrenzwerte unten.
 
@@ -48,9 +48,11 @@ Bei einigen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie durc
 
 | Kapazitätsbasierte Lizenz | 2 PiB 
 |===
+.Ist bei HA die Lizenzkapazitätsgrenze pro Node oder für das gesamte HA-Paar?
 Das Kapazitätslimit liegt für das gesamte HA-Paar. Er erfolgt nicht pro Node. Wenn Sie beispielsweise die Premium-Lizenz verwenden, können Sie bis zu 368 tib Kapazität zwischen beiden Nodes haben.
 
-Nein, das tut es nicht. Die Daten in einem AWS HA-Paar werden zwischen den Nodes synchron gespiegelt, sodass bei einem Ausfall die Daten verfügbar sind. Wenn Sie beispielsweise eine 8-tib-Festplatte auf Node A erwerben, weist Cloud Manager auf Node B auch eine 8-tib-Festplatte zu, die für gespiegelte Daten verwendet wird. Während 16 tib Kapazität bereitgestellt wurde, zählt nur 8 tib auf dem Lizenzlimit.
+.Werden bei einem HA-System in AWS die gespiegelten Daten mit dem Kapazitätslimit gezählt?
+Nein, das tut es nicht. Die Daten in einem AWS HA-Paar werden zwischen den Nodes synchron gespiegelt, sodass bei einem Ausfall die Daten verfügbar sind. Wenn Sie beispielsweise eine 8-tib-Festplatte auf Node A erwerben, weist BlueXP auf Node B auch eine 8-tib-Festplatte zu, die für gespiegelte Daten verwendet wird. Während 16 tib Kapazität bereitgestellt wurde, zählt nur 8 tib auf dem Lizenzlimit.
 
 
 
@@ -154,11 +156,7 @@ Die folgenden Festplattenbeschränkungen gelten für Cloud Volumes ONTAP Systeme
 
 * Wenn Sie die Node-basierte Lizenzierung verwenden, können Sie mehrere Node-basierte Lizenzen für ein BYOL-System von Cloud Volumes ONTAP erwerben, um mehr als 368 tib Kapazität zuzuweisen.
 +
-Die Anzahl der Lizenzen, die Sie für ein Single Node-System oder ein HA-Paar erwerben können, ist unbegrenzt. Beachten Sie, dass die Festplattenbeschränkungen verhindern können, dass Sie durch die Verwendung von Festplatten allein das Kapazitätslimit nicht erreichen. Sie können die Festplattengrenze um überschreiten https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering inaktiver Daten in Objektspeicher"^]. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie, wie Sie Cloud Volumes ONTAP zusätzliche Systemlizenzen hinzufügen"^].
-
-* die Instanztypen c4, m4 und r4 werden in diesem Release nicht mit neuen Cloud Volumes ONTAP-Systemen unterstützt.
-+
-Wir weisen jedoch für diese Instanztypen immer noch Festplattenbeschränkungen auf, da Sie ein System auf diese Version aktualisieren können, wenn Sie auf einem dieser Instanztypen ausgeführt werden.
+Die Anzahl der Lizenzen, die Sie für ein Single Node-System oder ein HA-Paar erwerben können, ist unbegrenzt. Beachten Sie, dass die Festplattenbeschränkungen verhindern können, dass Sie durch die Verwendung von Festplatten allein das Kapazitätslimit nicht erreichen. Sie können die Festplattengrenze um überschreiten https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering inaktiver Daten in Objektspeicher"^]. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie, wie Sie Cloud Volumes ONTAP zusätzliche Systemlizenzen hinzufügen"^]
 
 
 
@@ -175,9 +173,6 @@ Wir weisen jedoch für diese Instanztypen immer noch Festplattenbeschränkungen 
 
 
 | M5dn.24xlarge | 19 ^2^ | 304 tib | 368 tib 
-
-
-| c4-, m4- und r4-Instanzen | 34 | 368 tib | 368 tib 
 |===
 . 21 Datendisks sind die Grenze für _neue_ Implementierungen von Cloud Volumes ONTAP. Wenn Sie ein System aktualisieren, das mit Version 9.7 oder früher erstellt wurde, unterstützt das System weiterhin 22 Festplatten. Eine weitere Festplatte mit weniger Datenfestplatte wird auf neuen Systemen unterstützt, die diese Instanztypen verwenden, da ab Version 9.8 eine Kernfestplatte hinzugefügt wird.
 . Dieser Instanztyp verfügt über mehr lokale NVMe-Festplatten als andere Instanztypen, was bedeutet, dass eine kleinere Anzahl von Datenfestplatten unterstützt werden.
@@ -199,9 +194,6 @@ Wir weisen jedoch für diese Instanztypen immer noch Festplattenbeschränkungen 
 
 
 | M5dn.24xlarge | 19 ^2^ | 304 tib | 368 tib | 304 tib | 368 tib x jede Lizenz 
-
-
-| c4-, m4- und r4-Instanzen | 34 | 368 tib | 368 tib | 544 tib | 368 tib x jede Lizenz 
 |===
 . 21 Datendisks sind die Grenze für _neue_ Implementierungen von Cloud Volumes ONTAP. Wenn Sie ein System aktualisieren, das mit Version 9.7 oder früher erstellt wurde, unterstützt das System weiterhin 22 Festplatten. Eine weitere Festplatte mit weniger Datenfestplatte wird auf neuen Systemen unterstützt, die diese Instanztypen verwenden, da ab Version 9.8 eine Kernfestplatte hinzugefügt wird.
 . Dieser Instanztyp verfügt über mehr lokale NVMe-Festplatten als andere Instanztypen, was bedeutet, dass eine kleinere Anzahl von Datenfestplatten unterstützt werden.
@@ -220,9 +212,6 @@ Wir weisen jedoch für diese Instanztypen immer noch Festplattenbeschränkungen 
 
 
 | M5dn.24xlarge | 16 ^2^ | 256 tib | 368 tib 
-
-
-| c4-, m4- und r4-Instanzen | 31 | 368 tib | 368 tib 
 |===
 . 18 Datendisks sind die Grenze für _neue_ Implementierungen von Cloud Volumes ONTAP. Wenn Sie ein System aktualisieren, das mit Version 9.7 oder früher erstellt wurde, unterstützt das System weiterhin 19 Festplatten. Eine weitere Festplatte mit weniger Datenfestplatte wird auf neuen Systemen unterstützt, die diese Instanztypen verwenden, da ab Version 9.8 eine Kernfestplatte hinzugefügt wird.
 . Dieser Instanztyp verfügt über mehr lokale NVMe-Festplatten als andere Instanztypen, was bedeutet, dass eine kleinere Anzahl von Datenfestplatten unterstützt werden.
@@ -244,9 +233,6 @@ Wir weisen jedoch für diese Instanztypen immer noch Festplattenbeschränkungen 
 
 
 | M5dn.24xlarge | 16 ^2^ | 256 tib | 368 tib | 256 tib | 368 tib x jede Lizenz 
-
-
-| c4-, m4- und r4-Instanzen | 31 | 368 tib | 368 tib | 496 tib | 368 tib x jede Lizenz 
 |===
 . 18 Datendisks sind die Grenze für _neue_ Implementierungen von Cloud Volumes ONTAP. Wenn Sie ein System aktualisieren, das mit Version 9.7 oder früher erstellt wurde, unterstützt das System weiterhin 19 Festplatten. Eine weitere Festplatte mit weniger Datenfestplatte wird auf neuen Systemen unterstützt, die diese Instanztypen verwenden, da ab Version 9.8 eine Kernfestplatte hinzugefügt wird.
 . Dieser Instanztyp verfügt über mehr lokale NVMe-Festplatten als andere Instanztypen, was bedeutet, dass eine kleinere Anzahl von Datenfestplatten unterstützt werden.
@@ -260,45 +246,29 @@ Bei einigen Konfigurationen können Sie zusätzliche Storage VMs (SVMs) für Clo
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-aws.html["Erfahren Sie, wie Sie zusätzliche Storage VMs erstellen"^].
 
-[cols="26,26,48"]
+[cols="40,60"]
 |===
-| Lizenztyp | Instanzfamilie | Begrenzung von Storage-VMs 
+| Lizenztyp | Begrenzung von Storage-VMs 
 
 
-| *Freemium* | c5, m5 und r5  a| 
-* 24 Storage VMs insgesamt ^1,2^
-
-
-
-
-| *Kapazitätsbasierte PAYGO oder BYOL* ^3^ | c5, m5 und r5  a| 
-* 24 Storage VMs insgesamt ^1,2^
+| *Freemium*  a| 
+24 Storage VMs insgesamt ^1,2^
 
 
 
+| *Kapazitätsbasierte PAYGO oder BYOL* ^3^  a| 
+24 Storage VMs insgesamt ^1,2^
 
-.2+| *Node-basiertes PAYGO* | c4, m4 und r4  a| 
+
+
+| *Node-basiertes PAYGO*  a| 
 * 1 Storage-VM zur Bereitstellung von Daten
 * 1 Storage VM für Disaster Recovery
 
 
 
 
-| c5, m5 und r5  a| 
-* 1 Storage-VM zur Bereitstellung von Daten
-* 1 Storage VM für Disaster Recovery
-
-
-
-
-.2+| *Node-basiertes BYOL* ^4^ | c4, m4 und r4  a| 
-* 1 Storage-VM zur Bereitstellung von Daten
-* 1 Storage VM für Disaster Recovery
-
-
-
-
-| c5, m5 und r5  a| 
+| *Node-basiertes BYOL* ^4^  a| 
 * 24 Storage VMs insgesamt ^1,2^
 
 
@@ -406,7 +376,7 @@ Die unten aufgeführten Instanzen gelten für die Familien c5, m5 und r5.
 | *.24xlarge | 50 | 44 | 24 | 12 
 |===
 . Diese Zahl gibt an, wie viele _verbleibende_ private IP-Adressen nach Implementierung und Einrichtung von Cloud Volumes ONTAP am Port e0a verfügbar sind. Ein *.2xlarge-System unterstützt beispielsweise maximal 15 IP-Adressen pro Netzwerkschnittstelle. Wird ein HA-Paar in einer einzelnen AZ implementiert, werden Port e0a 5 private IP-Adressen zugewiesen. Daher verbleiben bei einem HA-Paar, bei dem ein Instanztyp *.2xlarge verwendet wird, 10 private IP-Adressen für zusätzliche Storage VMs.
-. Die in diesen Spalten aufgeführten Nummer enthalten die erste Storage-VM, die Cloud Manager standardmäßig erstellt. Wenn beispielsweise in dieser Spalte 24 aufgeführt wird, bedeutet dies, dass Sie 23 zusätzliche Storage VMs für insgesamt 24 erstellen können.
+. Die in diesen Spalten aufgeführte Nummer enthält die erste Speicher-VM, die BlueXP standardmäßig erstellt. Wenn beispielsweise in dieser Spalte 24 aufgeführt wird, bedeutet dies, dass Sie 23 zusätzliche Storage VMs für insgesamt 24 erstellen können.
 . Ein Management-LIF für die Storage-VM ist optional. Ein Management-LIF bietet eine Verbindung zu Management-Tools wie SnapCenter.
 +
 Da zum einen eine private IP-Adresse erforderlich ist, wird die Anzahl der zusätzlichen, von Ihnen erstellten Storage VMs begrenzt. Die einzige Ausnahme ist ein HA-Paar in mehreren Verfügbarkeitszonen. In diesem Fall ist die IP-Adresse für die Management LIF eine _Floating_ IP-Adresse, somit wird sie nicht gegen die _private_ IP-Beschränkung angerechnet.

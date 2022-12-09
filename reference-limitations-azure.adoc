@@ -24,7 +24,7 @@ Der VM-Typ Standard_L8S_v2 umfasst lokalen NVMe-Storage, den Cloud Volumes ONTAP
 
 * Um die Performance-Verbesserungen von Flash Cache nutzen zu können, muss die Komprimierung für alle Volumes deaktiviert sein.
 +
-Beim Erstellen eines Volumes aus Cloud Manager kann keine Storage-Effizienz gewählt werden. Alternativ können Sie ein Volume erstellen und dann http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["Deaktivieren Sie die Datenkomprimierung über die CLI"^].
+Bei der Erstellung eines Volumes mit BlueXP können Sie sich für keine Storage-Effizienz entscheiden. Alternativ können Sie auch ein Volume erstellen und dann http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["Deaktivieren Sie die Datenkomprimierung über die CLI"^].
 
 * Cloud Volumes ONTAP unterstützt das Neustarten des Cache nicht, wenn ein Neustart nach einem Neustart erfolgen soll.
 
@@ -35,10 +35,4 @@ Beim Erstellen eines Volumes aus Cloud Manager kann keine Storage-Effizienz gew�
 
 HA-Paare werden in einigen Regionen nicht unterstützt.
 
-https://cloud.netapp.com/cloud-volumes-global-regions["Zeigen Sie die Liste der unterstützten Azure Regionen an"^].
-
-
-
-== CSP-Partner erhalten keine Pay-as-you-go-Lösung
-
-Als Microsoft Cloud Solution Provider (CSP)-Partner können Sie Cloud Volumes ONTAP Explore, Standard oder Premium nicht bereitstellen, da CSP-Partner keine Pay-as-you-go-Abonnements haben. Kunden müssen eine Lizenz erwerben und Cloud Volumes ONTAP BYOL implementieren.
+https://cloud.netapp.com/cloud-volumes-global-regions["Zeigen Sie die Liste der unterstützten Azure Regionen an"^]
