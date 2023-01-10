@@ -697,4 +697,8 @@
   <block id="8e36f0f32d75ebd3c7851e726c538544" category="paragraph"><block ref="8e36f0f32d75ebd3c7851e726c538544" category="inline-link-rx"></block></block>
   <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXP-Blog</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Alle BlueXP-Dokumentationen</block>
+  <block id="90d21e45df2b69a8345b8381643767db" category="section-title">9.11.1 P4 (18. Dezember 2022)</block>
+  <block id="c4426846e80c44f78da5d2553c87de70" category="paragraph">Der Patch 9.11.1 P4 ist jetzt für Cloud Volumes ONTAP für alle Cloud-Provider verfügbar, wenn Sie über einen Connector mit Version 3.9.24 oder höher verfügen. BlueXP fordert Sie auf, Ihre vorhandenen Systeme auf diese Patch-Version zu aktualisieren.</block>
+  <block id="cae74b75cb879fa6011c4bc1e9acafed" category="inline-link">Hier finden Sie eine Liste der im P4-Patch fixierten Fehler</block>
+  <block id="fdd4c7c7c56a9b411ca6cf05fb69ae8a" category="paragraph"><block ref="f533ed73bde5a6438c74b91c6480dbdb" category="inline-link-rx"></block> (Anmeldung auf der NetApp Support Site erforderlich).</block>
 </blocks>
