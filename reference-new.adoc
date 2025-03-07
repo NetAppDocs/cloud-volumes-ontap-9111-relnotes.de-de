@@ -116,7 +116,7 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Hier finden Sie die voll
 
 Cloud Volumes ONTAP HA-Paare werden jetzt in Mailand (europa-West8) unterstützt.
 
-https://cloud.netapp.com/cloud-volumes-global-regions["Hier finden Sie die vollständige Liste der unterstützten Regionen für Cloud Volumes ONTAP"^]
+https://bluexp.netapp.com/cloud-volumes-global-regions["Hier finden Sie die vollständige Liste der unterstützten Regionen für Cloud Volumes ONTAP"^]
 
 
 
